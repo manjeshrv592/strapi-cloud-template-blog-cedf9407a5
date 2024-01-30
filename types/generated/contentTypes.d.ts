@@ -799,9 +799,9 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
-    sub_category: Attribute.Relation<
+    sub_categories: Attribute.Relation<
       'api::category.category',
-      'oneToOne',
+      'oneToMany',
       'api::sub-category.sub-category'
     >;
     createdAt: Attribute.DateTime;
@@ -886,13 +886,8 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       }>;
     category: Attribute.Relation<
       'api::sub-category.sub-category',
-      'oneToOne',
+      'manyToOne',
       'api::category.category'
-    >;
-    product: Attribute.Relation<
-      'api::sub-category.sub-category',
-      'oneToOne',
-      'api::product.product'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

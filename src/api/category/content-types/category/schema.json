@@ -18,9 +18,9 @@
       "minLength": 3,
       "unique": true
     },
-    "sub_category": {
+    "sub_categories": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::sub-category.sub-category",
       "mappedBy": "category"
     }

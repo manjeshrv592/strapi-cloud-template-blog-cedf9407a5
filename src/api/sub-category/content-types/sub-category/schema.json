@@ -20,15 +20,9 @@
     },
     "category": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::category.category",
-      "inversedBy": "sub_category"
-    },
-    "product": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product.product",
-      "mappedBy": "sub_category"
+      "inversedBy": "sub_categories"
     }
   }
 }
